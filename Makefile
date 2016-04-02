@@ -2,6 +2,7 @@ CLANG=clang-3.7
 OPT=opt-3.7
 CXX=clang++-3.7
 LLVMDIS=llvm-dis-3.7
+LLVMCONFIG=llvm-config-3.7
 
 all: bc ll pass
 
@@ -18,7 +19,7 @@ pass: MyPass.so
 	$(LLVMDIS) $<
 
 %.so: %.cc
-	$(CXX) -fPIC -shared $< -o $@ -std=c++11 `llvm-config-3.4 --cppflags`
+	$(CXX) -fPIC -shared $< -o $@ -std=c++11 `$(LLVMCONFIG) --cppflags`
 
 check:
 	$(OPT) -load ./MyPass.so -mypass test.bc -o tmp.bc
