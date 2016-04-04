@@ -1,6 +1,7 @@
 # ez llvm pass
 
-Easy LLVM setup on Ubuntu.
+Easy LLVM setup on Ubuntu which lets you get started very quickly with pass
+development. That's it.
 
 1. Follow the instructions at http://llvm.org/apt/ to install LLVM 3.7 (stable)
    via apt.
